@@ -1,4 +1,4 @@
-package net.rodor.stereotypeproject.constants.dao;
+package net.rodor.stereotypeproject.constants.controller;
 
 import java.util.List;
 
