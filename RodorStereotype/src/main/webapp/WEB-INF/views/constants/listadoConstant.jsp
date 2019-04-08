@@ -1,4 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -27,11 +28,17 @@
 
 </head>
 <body>
-	<jsp:include page="header.jsp"/>
+	<jsp:include page="../header.jsp" />
 	<div class="container">
 		<div class="row">
-			<h1>Welcome to RODOR - STEREOTYPE PROJECT!</h1>
+			<b>Listado de Constantes de la Aplicacion.</b>
+			<br/>
+			<c:forEach items="${lstConstant}" var="item">
+    		${item}<br>
+			</c:forEach>
 		</div>
 	</div>
+
+
 </body>
 </html>

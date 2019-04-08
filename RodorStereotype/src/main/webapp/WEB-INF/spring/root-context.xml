@@ -18,11 +18,12 @@
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
-		<property name="annotatedClasses">
+		<!-- <property name="annotatedClasses">
 			<list>
 				<value>net.rodor.stereotypeproject.constants.entity.Constant</value>
 			</list>
-		</property>
+		</property> -->
+		<property name="packagesToScan" value="net.rodor.stereotypeproject"/>
 	</bean>
 
 	<bean class="org.springframework.orm.hibernate5.HibernateTemplate"
