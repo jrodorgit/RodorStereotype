@@ -1,6 +1,6 @@
 package net.rodor.stereotypeproject.constants.entity;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,22 +15,22 @@ import javax.persistence.Table;
 public class Constant implements Comparable<Constant> {
 
 	@Id
-	@Column(name = "id")
+	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "permiso_generator")
 	@SequenceGenerator(name="permiso_generator", sequenceName = "SEQ_T_PERMISO", allocationSize=1)
 	private Integer id;
 	
-	@Column(name = "clave")
+	@Column(name = "CLAVE")
 	public  String clave;
 	
-	@Column(name = "descripcion")
+	@Column(name = "DESCRIPCION")
 	public  String descripcion;
 	
-	@Column(name = "fechini")
-	public  Timestamp fechaInicio;
+	@Column(name = "FECHINI")
+	public  Date fechaInicio;
 	
-	@Column(name = "fechfin")
-	public  Timestamp fechaFin;
+	@Column(name = "FECHFIN")
+	public  Date fechaFin;
 	
 	
 	
@@ -46,6 +46,68 @@ public class Constant implements Comparable<Constant> {
 		return "Constant [id=" + id + ", clave=" + clave + ", descripcion=" + descripcion + ", fechaInicio="
 				+ fechaInicio + ", fechaFin=" + fechaFin + "]";
 	}
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+
+	public String getClave() {
+		return clave;
+	}
+
+
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+
+	public Date getFechaInicio() {
+		return fechaInicio;
+	}
+
+
+
+	public void setFechaInicio(Date fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
+
+
+	public Date getFechaFin() {
+		return fechaFin;
+	}
+
+
+
+	public void setFechaFin(Date fechaFin) {
+		this.fechaFin = fechaFin;
+	}
+
+
 	
 
 }

@@ -1,8 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+	pageEncoding="ISO-8859-1"%><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -30,13 +28,21 @@
 <body>
 	<jsp:include page="../header.jsp" />
 	<div class="container">
-		<div class="row">
-			<b>Listado de Constantes de la Aplicacion. <a class="btn btn-xs btn-default" href="<c:url value="/constants/nuevaConstant"/>"><span class="glyphicon glyphicon-plus"></span></a></b>
-			<br/>
-			<c:forEach items="${lstConstant}" var="item">
-    		${item}<br>
-			</c:forEach>
-		</div>
+		<b>Alta Nueva Constante.</b> <br />
+		<form action="add" method="post" >
+			<pre>
+				Clave: <input type="text" name="clave" value="" clave"" />
+				Descripcion: <input type="text" name="descripcion" 	value="descripcion" />
+				Fecha Inicio Valor: <input type="text" name="fechaInicio" value="01/01/2019" />
+				Fecha Fin Valor: <input type="text" name="fechaFin" value="31/12/2019" />
+				
+				<input type="submit" name="Add Nueva Constante"
+					value="Add Nueva Constante" />
+			</pre>
+
+		</form>
+
+
 	</div>
 
 
