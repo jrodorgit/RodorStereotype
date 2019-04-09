@@ -33,8 +33,8 @@
 			<pre>
 				Clave: <input type="text" name="clave" value="" clave"" />
 				Descripcion: <input type="text" name="descripcion" 	value="descripcion" />
-				Fecha Inicio Valor: <input type="text" name="fechaInicio" value="01/01/2019" />
-				Fecha Fin Valor: <input type="text" name="fechaFin" value="31/12/2019" />
+				Fecha Inicio Valor: <input type="text" name="fechaInicio" value="2019-01-01 01:00:00.0" />
+				Fecha Fin Valor: <input type="text" name="fechaFin" value="2020-01-01 01:00:00.0" />
 				
 				<input type="submit" name="Add Nueva Constante"
 					value="Add Nueva Constante" />

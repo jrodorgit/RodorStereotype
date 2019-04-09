@@ -29,17 +29,19 @@
 	<jsp:include page="../header.jsp" />
 	<div class="container">
 		<b>Modificacion Constante.</b> <br />
-		<form action="actualiza" method="post" >
+		<form action="actualiza" method="post">
 			<pre>
 				
-				Id: <input type="text" name="id" value="${item.id}" />
+				<input type="hidden" name="id" value="${item.id}" />
 				Clave: <input type="text" name="clave" value="${item.clave}" />
-				Descripcion: <input type="text" name="descripcion" 	value="${item.descripcion}" />
-				Fecha Inicio Valor: <input type="text" name="fechaInicio" value="${item.fechaInicio}" />
-				Fecha Fin Valor: <input type="text" name="fechaFin" value="${item.fechaFin}" />
+				Descripcion: <input type="text" name="descripcion"
+					value="${item.descripcion}" />
+				Fecha Inicio Valor: <input type="text" name="fechaInicio"
+					value="${item.fechaInicio}" />
+				Fecha Fin Valor: <input type="text" name="fechaFin"
+					value="${item.fechaFin}" />
 				
-				<input type="submit" name="Save Constante"
-					value="Save Constante" />
+				<input type="submit" name="Save Constante" value="Save Constante" />
 			</pre>
 
 		</form>

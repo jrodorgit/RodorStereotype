@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 @Entity
 @Table(name="RODOR_CONSTANTS")
 public class Constant implements Comparable<Constant> {
@@ -27,9 +30,11 @@ public class Constant implements Comparable<Constant> {
 	public  String descripcion;
 	
 	@Column(name = "FECHINI")
+	@DateTimeFormat(iso=ISO.DATE)
 	public  Date fechaInicio;
 	
 	@Column(name = "FECHFIN")
+	@DateTimeFormat(iso=ISO.DATE)
 	public  Date fechaFin;
 	
 	
