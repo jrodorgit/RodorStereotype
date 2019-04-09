@@ -1,8 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+	pageEncoding="ISO-8859-1"%><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -30,13 +28,23 @@
 <body>
 	<jsp:include page="../header.jsp" />
 	<div class="container">
-		<div class="row">
-			<b>Listado de Constantes de la Aplicacion. <a class="btn btn-xs btn-default" href="<c:url value="/constants/nuevaConstant"/>"><span class="glyphicon glyphicon-plus"></span></a></b>
-			<br/>
-			<c:forEach items="${lstConstant}" var="item">
-    		${item} - <a class="btn btn-xs btn-default" href="<c:url value="/constants/editConstant?id=${item.id}"/>"><span class="glyphicon glyphicon-edit"></span></a> - <a class="btn btn-xs btn-default" href="<c:url value="/constants/borrarConstant?id=${item.id}"/>"><span class="glyphicon glyphicon-trash"></span></a> <br>
-			</c:forEach>
-		</div>
+		<b>Modificacion Constante.</b> <br />
+		<form action="actualiza" method="post" >
+			<pre>
+				
+				Id: <input type="text" name="id" value="${item.id}" />
+				Clave: <input type="text" name="clave" value="${item.clave}" />
+				Descripcion: <input type="text" name="descripcion" 	value="${item.descripcion}" />
+				Fecha Inicio Valor: <input type="text" name="fechaInicio" value="${item.fechaInicio}" />
+				Fecha Fin Valor: <input type="text" name="fechaFin" value="${item.fechaFin}" />
+				
+				<input type="submit" name="Save Constante"
+					value="Save Constante" />
+			</pre>
+
+		</form>
+
+
 	</div>
 
 

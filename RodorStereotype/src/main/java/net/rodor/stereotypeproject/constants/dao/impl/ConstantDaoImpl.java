@@ -1,5 +1,6 @@
 package net.rodor.stereotypeproject.constants.dao.impl;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +53,11 @@ public class ConstantDaoImpl implements ConstantDao {
 
 	@Override
 	public List<Constant> findAll() {
-		return hibernateTemplate.loadAll(Constant.class);
+		List<Constant> constantesOrdenadas = hibernateTemplate.loadAll(Constant.class) ;
+		Collections.sort(constantesOrdenadas);
+		return constantesOrdenadas;
+		
+		//return hibernateTemplate.loadAll(Constant.class) ;
 	}
 
 }
