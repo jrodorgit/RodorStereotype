@@ -112,7 +112,7 @@ public class Constant implements Comparable<Constant> {
 		this.fechaFin = fechaFin;
 	}
 
-
+	public  String  toJSONFormat (){ return "{\r\n \"clave\" : \""+this.clave+"\", \r\n \"descripcion\" : \""+this.descripcion+"\", \r\n \"fechaInicio\" : \""+this.fechaInicio+"\", \r\n \"fechaFin\" : \""+this.fechaFin+"\" \r\n\r\n}";}
 	
 
 }
