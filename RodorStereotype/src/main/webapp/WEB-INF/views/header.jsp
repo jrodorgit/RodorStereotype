@@ -9,5 +9,8 @@
 		<ul class="nav navbar-nav">
 			<li><a href="<spring:url value="/constants/"/>">Constants</a></li>
 		</ul>
+		<ul class="nav navbar-nav">
+			<li><a href="<spring:url value="/domains/"/>">Domains</a></li>
+		</ul>
 	</div>
 </nav>

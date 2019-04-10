@@ -21,6 +21,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>net.rodor.stereotypeproject.constants.entity.Constant</value>
+				<value>net.rodor.stereotypeproject.domains.entity.Domain</value>
 			</list>
 		</property>
 		<!-- <property name="packagesToScan" value="net.rodor.stereotypeproject"/> -->
