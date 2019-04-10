@@ -42,6 +42,7 @@ public class ConstantsRestController {
         return obj.toJSONFormat();
     }
     ***/
+	// acceso al servicio REST http://localhost:8080/stereotypeproject/constants/rest/activa?clave=GOOGLE
 	@RequestMapping("/activa")
 	@ResponseBody
 	public  Constant getConstanteActiva(@RequestParam(value="clave") String name) {

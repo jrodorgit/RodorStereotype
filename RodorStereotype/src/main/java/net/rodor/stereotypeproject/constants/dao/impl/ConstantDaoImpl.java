@@ -1,6 +1,5 @@
 package net.rodor.stereotypeproject.constants.dao.impl;
 
-import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Collections;
@@ -17,6 +16,8 @@ import net.rodor.stereotypeproject.constants.entity.Constant;
 
 @Repository
 public class ConstantDaoImpl implements ConstantDao {
+
+	
 
 	public HibernateTemplate getHibernateTemplate() {
 		return hibernateTemplate;
@@ -65,14 +66,14 @@ public class ConstantDaoImpl implements ConstantDao {
 	}
 
 	public List<Constant> getAllByDate(Timestamp fecha) {
-		String sql = "select id,clave,descripcion,fechini,fechfin from RODOR_CONSTANTS where fechini <= ? and fechfin > ?";
+		
 		java.sql.Date fechaActivo = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 		if(fecha != null){
 			fechaActivo = new java.sql.Date(fecha.getTime());
 		}
 		ConstantRowMapper rowmapper = new ConstantRowMapper();
 		Object[] args=new Object[] {fechaActivo,fechaActivo};
-		List<Constant> result =jdbcTemplate.query(sql, args, rowmapper);
+		List<Constant> result =jdbcTemplate.query(CONSTANT_GET_ALL_BY_DATE, args, rowmapper);
 		return result;
 	}
 }
