@@ -1,5 +1,9 @@
 package net.rodor.stereotypeproject.constants.controller;
 
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,18 +36,38 @@ public class ConstantsController {
 	@RequestMapping("/")
 	public String goConstants(ModelMap model) {
 
-		/***
-		// llamada al servico  de listas las activas a fecha actual
-		List<Constant> listadoActivo = constantService.getAllByDate(null);
-		model.addAttribute("lstConstant", listadoActivo);
-		return "constants/listadoConstant";
-		***/
 		
 		// llamada al servicio de listar todas las constantes
 		List<Constant> constants = constantService.getConstants();
 		model.addAttribute("lstConstant", constants);
 		return "constants/listadoConstant";
-
+		
+		
+		/***
+		// llamada al servicio  de listado de constantes activo a una fecha
+		String inDate = "12-09-2018";
+		DateFormat df = new SimpleDateFormat("MM-dd-yyyy");
+		Timestamp ts=null;
+		try {
+			ts = new Timestamp(((java. util. Date)df. parse(inDate)). getTime());
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		List<Constant> listadoActivo = constantService.getAllByDate(ts);
+		model.addAttribute("lstConstant", listadoActivo);
+		return "constants/listadoConstant";
+		***/
+		
+		
+		/***
+		// llamada al servicio  de listado de constantes activas a fecha actual
+		List<Constant> listadoActivo = constantService.getAllByDate(null);
+		model.addAttribute("lstConstant", listadoActivo);
+		return "constants/listadoConstant";
+		***/
+		
+		
+		
 	}
 
 	/** Nueva Constante ***/

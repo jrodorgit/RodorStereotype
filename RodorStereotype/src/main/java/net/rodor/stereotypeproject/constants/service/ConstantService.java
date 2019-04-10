@@ -17,6 +17,11 @@ public interface ConstantService {
 	
 	List<Constant> getConstants();
 	
+	/**
+	 * Devuelve a fecha introducida como parametro, el conjunto de constantes "activas" a dicha fecha.
+	 * @param fecha Si la fecha es nula se devuelven las "activas" a fecha actual del sistema
+	 * @return Listado de Constant
+	 */
 	List<Constant> getAllByDate(Timestamp fecha);
 	
 }
