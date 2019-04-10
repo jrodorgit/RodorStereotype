@@ -1,5 +1,6 @@
 package net.rodor.stereotypeproject.constants.service;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import net.rodor.stereotypeproject.constants.entity.Constant;
@@ -15,5 +16,7 @@ public interface ConstantService {
 	Constant getConstant(int id);
 	
 	List<Constant> getConstants();
+	
+	List<Constant> getAllByDate(Timestamp fecha);
 	
 }

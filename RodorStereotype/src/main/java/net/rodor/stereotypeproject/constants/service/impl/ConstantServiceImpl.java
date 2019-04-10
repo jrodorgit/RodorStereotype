@@ -1,5 +1,6 @@
 package net.rodor.stereotypeproject.constants.service.impl;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,11 @@ public class ConstantServiceImpl implements ConstantService {
 	@Override
 	public List<Constant> getConstants() {
 		return dao.findAll();
+	}
+	
+	
+	public List<Constant> getAllByDate(Timestamp fecha) {
+		return dao.getAllByDate(fecha);
 	}
 
 }

@@ -1,5 +1,6 @@
 package net.rodor.stereotypeproject.constants.dao;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import net.rodor.stereotypeproject.constants.entity.Constant;
@@ -15,4 +16,6 @@ public interface ConstantDao {
 	Constant find(int id);
 	
 	List<Constant> findAll();
+	
+	List<Constant> getAllByDate(Timestamp fecha);
 }

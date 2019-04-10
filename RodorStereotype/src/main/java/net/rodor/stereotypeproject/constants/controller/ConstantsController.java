@@ -32,6 +32,13 @@ public class ConstantsController {
 	@RequestMapping("/")
 	public String goConstants(ModelMap model) {
 
+		/***
+		// llamada al servico  de listas las activas a fecha actual
+		List<Constant> listadoActivo = constantService.getAllByDate(null);
+		model.addAttribute("lstConstant", listadoActivo);
+		return "constants/listadoConstant";
+		***/
+		
 		// llamada al servicio de listar todas las constantes
 		List<Constant> constants = constantService.getConstants();
 		model.addAttribute("lstConstant", constants);
