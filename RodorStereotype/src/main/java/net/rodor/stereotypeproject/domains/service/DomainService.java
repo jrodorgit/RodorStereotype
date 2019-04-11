@@ -15,4 +15,10 @@ public interface DomainService {
 	Domain getDomainValue(int id);
 
 	List<Domain> getDomainsValue();
+	
+	/**
+	 * Devuleve la relacion de Aplicaciones que tiene definidos dominios
+	 * @return Domain ( solo tendran el campo Domain.appdomain
+	 */
+	List<Domain> getAppsDomain();
 }

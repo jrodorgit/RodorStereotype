@@ -6,6 +6,8 @@ import net.rodor.stereotypeproject.domains.entity.Domain;
 
 public interface DomainDao {
 
+	public static final String DOMAIN_GET_APPS = "";
+	
 	int create(Domain obj);
 
 	void update(Domain obj);
@@ -15,4 +17,6 @@ public interface DomainDao {
 	Domain find(int id);
 
 	List<Domain> findAll();
+	
+	List<Domain> findApps();
 }

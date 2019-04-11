@@ -4,15 +4,20 @@ import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
+import net.rodor.stereotypeproject.domains.dao.DomainAppRowMapper;
 import net.rodor.stereotypeproject.domains.dao.DomainDao;
 import net.rodor.stereotypeproject.domains.entity.Domain;
 
 @Repository
 public class DomainDaoImpl implements DomainDao{
 
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
 	@Autowired
 	HibernateTemplate hibernateTemplate;
 	
@@ -54,6 +59,15 @@ public class DomainDaoImpl implements DomainDao{
 		Collections.sort(valoresDominio);
 		return valoresDominio;
 		
+	}
+
+	@Override
+	public List<Domain> findApps() {
+		
+		DomainAppRowMapper rowmapper = new DomainAppRowMapper();
+		Object[] args=null;
+		List<Domain> result =jdbcTemplate.query(DOMAIN_GET_APPS, args, rowmapper);
+		return result;
 	}
 
 }
