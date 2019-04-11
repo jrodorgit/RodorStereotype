@@ -1,8 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+	pageEncoding="ISO-8859-1"%><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -30,13 +28,26 @@
 <body>
 	<jsp:include page="../header.jsp" />
 	<div class="container">
-		<div class="row">
-			<b>Listado de Valores de Dominios. <a class="btn btn-xs btn-default" href="<c:url value="/domains/nuevaDomainValue"/>"><span class="glyphicon glyphicon-plus">Add Valor Dominio</span></a></b>
-			<br/>
-			<c:forEach items="${lst}" var="item">
-    		${item} - <a class="btn btn-xs btn-default" href="<c:url value="/domains/editDomain?id=${item.id}"/>"><span class="glyphicon glyphicon-edit"></span></a> - <a class="btn btn-xs btn-default" href="<c:url value="/domains/borrarDomain?id=${item.id}"/>"><span class="glyphicon glyphicon-trash"></span></a> <br>
-			</c:forEach>
-		</div>
+		<b>Add Valor de Dominio.</b> <br />
+		<form action="add" method="post">
+			<pre>
+				
+				
+				appdomain: <input type="text" name="appdomain" value="" />
+				namedomain: <input type="text" name="namedomain" value="" />
+				code: <input type="text" name="code" value="" />
+				description: <input type="text" name="description" value="" />
+				descriptionXL: <input type="text" name="descriptionXL" value="" />					
+				descriptionXS: <input type="text" name="descriptionXS" value="" />
+				startdate: <input type="text" name="startdate" value="" />
+				enddate: <input type="text" name="enddate" value="" />
+				
+				<input type="submit" name="Save Domain Value" value="Save Domain Value" />
+			</pre>
+
+		</form>
+
+
 	</div>
 
 
