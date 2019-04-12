@@ -61,4 +61,13 @@ public class DomainServiceImpl implements DomainService {
 		}
 		return dao.findDomainsInApp(app, fechaActivo);
 	}
+
+	@Override
+	public List<Domain> getDomainsInApp(String app, String domainname, Timestamp date) {
+		java.sql.Timestamp fechaActivo = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+		if(date != null){
+			fechaActivo = date;
+		}
+		return dao.findDomainsInApp(app, domainname, fechaActivo);
+	}
 }

@@ -31,4 +31,13 @@ public interface DomainService {
 	 * @return
 	 */
 	List<Domain> getDomainsInApp(String app, Timestamp date);
+	
+	/**
+	 * Conjunto de valores de un dominio para una aplicacion que se encuentran activos a una fecha.
+	 * @param app
+	 * @param domainname
+	 * @param date
+	 * @return
+	 */
+	List<Domain> getDomainsInApp(String app, String domainname, Timestamp date);
 }

@@ -1,6 +1,5 @@
 package net.rodor.stereotypeproject.domains.controller;
 
-import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.rodor.stereotypeproject.constants.entity.Constant;
-import net.rodor.stereotypeproject.constants.service.ConstantService;
 import net.rodor.stereotypeproject.domains.entity.Domain;
 import net.rodor.stereotypeproject.domains.service.DomainService;
 
@@ -43,8 +40,12 @@ public class DomainController {
 		  // llamada al servicio que devuelve los dominios activos definidos para un
 		  List<Domain> domains =service.getDomainsInApp("SICOSS", null);
 		  model.addAttribute("domains", domains);
-		 ***/
 		
+		 // llamada al servicio que devuelve los dominios activos definidos para una aplicacion
+		  List<Domain> domainvals = service.getDomainsInApp("SICOSS", "CONCEPTOS GASTO",null);
+		  model.addAttribute("domainVals", domainvals);
+		   ***/
+		  
 		// llamada al servicio de listar todos los valores de dominios
 		List<Domain> listado = service.getDomainsValue();
 		model.addAttribute("lst", listado);

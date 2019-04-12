@@ -9,6 +9,7 @@ public interface DomainDao {
 
 	public static final String DOMAIN_GET_APPS = "select DISTINCT(APPDOMAIN) AS appdomain from RODOR_DOMAINS order by appdomain asc";
 	public static final String DOMAIN_GET_DOMIANS_IN_APP = "select  DISTINCT(namedomain) AS namedomain from RODOR_DOMAINS where appdomain = ? and startdate <= ? and enddate > ?";
+	public static final String DOMAIN_GET_DOMIANS_VALUES_IN_APP = "select  id,appdomain, namedomain, code, description, descriptionxl, descriptionxs from RODOR_DOMAINS where appdomain = ? and namedomain = ?  and startdate <= ? and enddate > ?";
 	
 	int create(Domain obj);
 
@@ -29,4 +30,14 @@ public interface DomainDao {
 	 * @return
 	 */
 	List<Domain> findDomainsInApp(String app, Timestamp date);
+	
+	/**
+	 * Conjunto de valores de un dominio para una aplicacion que se encuentran activosa una fecha.
+	 * @param app
+	 * @param domainname
+	 * @param date
+	 * @return
+	 */
+	List<Domain> findDomainsInApp(String app, String domainname, Timestamp date);
+	
 }

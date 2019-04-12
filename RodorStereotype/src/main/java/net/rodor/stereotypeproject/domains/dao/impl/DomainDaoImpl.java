@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import net.rodor.stereotypeproject.domains.dao.DomainAppRowMapper;
 import net.rodor.stereotypeproject.domains.dao.DomainDao;
 import net.rodor.stereotypeproject.domains.dao.DomainsInAppRowMapper;
+import net.rodor.stereotypeproject.domains.dao.DomainsValuesInAppRowMapper;
 import net.rodor.stereotypeproject.domains.entity.Domain;
 
 @Repository
@@ -78,6 +79,14 @@ public class DomainDaoImpl implements DomainDao{
 		DomainsInAppRowMapper rowmapper = new DomainsInAppRowMapper();
 		Object[] args=new Object[]{app,date,date};
 		List<Domain> result =jdbcTemplate.query(DOMAIN_GET_DOMIANS_IN_APP, args, rowmapper);
+		return result;
+	}
+
+	@Override
+	public List<Domain> findDomainsInApp(String app, String domainname, Timestamp date) {
+		DomainsValuesInAppRowMapper rowmapper = new DomainsValuesInAppRowMapper();
+		Object[] args=new Object[]{app,domainname,date,date};
+		List<Domain> result =jdbcTemplate.query(DOMAIN_GET_DOMIANS_VALUES_IN_APP, args, rowmapper);
 		return result;
 	}
 
