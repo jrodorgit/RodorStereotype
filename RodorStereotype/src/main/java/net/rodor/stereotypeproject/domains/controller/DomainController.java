@@ -1,5 +1,6 @@
 package net.rodor.stereotypeproject.domains.controller;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,16 @@ public class DomainController {
 
 	@RequestMapping("/")
 	public String goDomains(ModelMap model) {
+		
+		/***
+		  // llamada al servicio que devuelve las apps con dominios definidos
+		  List<Domain> apps =service.getAppsDomain(); 
+		  model.addAttribute("apps", apps);
+		  
+		  // llamada al servicio que devuelve los dominios activos definidos para un
+		  List<Domain> domains =service.getDomainsInApp("SICOSS", null);
+		  model.addAttribute("domains", domains);
+		 ***/
 		
 		// llamada al servicio de listar todos los valores de dominios
 		List<Domain> listado = service.getDomainsValue();

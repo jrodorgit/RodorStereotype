@@ -30,11 +30,35 @@
 <body>
 	<jsp:include page="../header.jsp" />
 	<div class="container">
+	<label>Dominios.</label>
 		<div class="row">
-			<b>Listado de Valores de Dominios. <a class="btn btn-xs btn-default" href="<c:url value="/domains/nuevaDomainValue"/>"><span class="glyphicon glyphicon-plus">Add Valor Dominio</span></a></b>
-			<br/>
+			<form id="appsForm">
+				<pre><label>Aplicaciones.</label>
+					<select>
+					<c:forEach items="${apps}" var="item"><option value="${item.appdomain}">${item.appdomain}</option>
+					</c:forEach>
+					</select>
+					<%-- <c:forEach items="${apps}" var="item">
+		    		${item.appdomain}<br>
+					</c:forEach> --%>
+				</pre>
+			</form>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<b>Listado de Valores de Dominios. <a
+				class="btn btn-xs btn-default"
+				href="<c:url value="/domains/nuevaDomainValue"/>"><span
+					class="glyphicon glyphicon-plus">Add Valor Dominio</span></a></b> <br />
 			<c:forEach items="${lst}" var="item">
-    		${item} - <a class="btn btn-xs btn-default" href="<c:url value="/domains/editDomain?id=${item.id}"/>"><span class="glyphicon glyphicon-edit"></span></a> - <a class="btn btn-xs btn-default" href="<c:url value="/domains/borrarDomain?id=${item.id}"/>"><span class="glyphicon glyphicon-trash"></span></a> <br>
+    		${item} - <a class="btn btn-xs btn-default"
+					href="<c:url value="/domains/editDomain?id=${item.id}"/>"><span
+					class="glyphicon glyphicon-edit"></span></a> - <a
+					class="btn btn-xs btn-default"
+					href="<c:url value="/domains/borrarDomain?id=${item.id}"/>"><span
+					class="glyphicon glyphicon-trash"></span></a>
+				<br>
 			</c:forEach>
 		</div>
 	</div>

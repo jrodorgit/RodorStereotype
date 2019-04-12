@@ -1,5 +1,7 @@
 package net.rodor.stereotypeproject.domains.service;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import net.rodor.stereotypeproject.domains.entity.Domain;
@@ -21,4 +23,12 @@ public interface DomainService {
 	 * @return Domain ( solo tendran el campo Domain.appdomain
 	 */
 	List<Domain> getAppsDomain();
+	
+	/**
+	 * Conjunto de dominios con valores activos a una fecha determinado en una aplicacion.
+	 * @param app
+	 * @param date
+	 * @return
+	 */
+	List<Domain> getDomainsInApp(String app, Timestamp date);
 }

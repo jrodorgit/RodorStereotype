@@ -1,6 +1,8 @@
 package net.rodor.stereotypeproject.domains.service.impl;
 
 import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +50,15 @@ public class DomainServiceImpl implements DomainService {
 
 	public List<Domain> getAppsDomain() {
 		return dao.findApps();
+	}
+
+	@Override
+	public List<Domain> getDomainsInApp(String app, Timestamp date) {
+		
+		java.sql.Timestamp fechaActivo = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+		if(date != null){
+			fechaActivo = date;
+		}
+		return dao.findDomainsInApp(app, fechaActivo);
 	}
 }

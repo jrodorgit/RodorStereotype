@@ -7,16 +7,14 @@ import org.springframework.jdbc.core.RowMapper;
 
 import net.rodor.stereotypeproject.domains.entity.Domain;
 
+public class DomainsInAppRowMapper implements RowMapper<Domain> {
 
-
-public class DomainAppRowMapper implements RowMapper<Domain> {
-
-	public static final String DOMAIN_APP = "appdomain";
+	public static final String DOMAIN_NAME_APP = "namedomain";
 	
 	@Override
 	public Domain mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Domain obj = new Domain();
-		obj.setAppdomain(rs.getString(DOMAIN_APP));
+		obj.setNamedomain(rs.getString(DOMAIN_NAME_APP));
 		return obj;
 	}
 	
