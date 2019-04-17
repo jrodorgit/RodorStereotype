@@ -60,10 +60,13 @@ COMMENT ON COLUMN RODOR_AUTHORITIES_Roles.idauth IS 'Identificador de la funcion
 COMMENT ON COLUMN RODOR_AUTHORITIES_Roles.idrol IS 'Identificador del rol';
 
 --REM INSERTING into RODOR_ROLES
-Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (1,4,1);
-Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (2,5,1);
-Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (3,6,1);
-Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (4,7,2);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (1,1,1);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (2,2,1);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (3,3,1);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (4,4,1);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (5,5,1);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (6,6,1);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (7,7,2);
 
 
 

@@ -19,8 +19,8 @@ public class AuthorityDaoImpl implements AuthorityDao {
 	@Override
 	public List<String> findUserAuthorities(String usercode, String acccode, Timestamp date) {
 		UserAuthRowMapper rowmapper = new UserAuthRowMapper();
-		//Object[] args=new Object[]{usercode,acccode,date,date};
-		Object[] args=null;
+		Object[] args=new Object[]{usercode,date,date,date,date,date,date,acccode};
+		//Object[] args=null;
 		List<String> result =jdbcTemplate.query(ROLES_GET_USER_AUTH, args, rowmapper);
 		return result;
 	}
