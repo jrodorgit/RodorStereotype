@@ -1,7 +1,6 @@
 package net.rodor.stereotypeproject.domains.service;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 import net.rodor.stereotypeproject.domains.entity.Domain;
