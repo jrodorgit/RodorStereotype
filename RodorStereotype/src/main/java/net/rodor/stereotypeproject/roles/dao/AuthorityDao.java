@@ -20,7 +20,7 @@ public interface AuthorityDao {
 	"and rolgrp.enddate > ? "+
 	"and funrol.IDROL = rolgrp.idrol "+
 	"and fun.ID = funrol.IDAUTH "+
-	"and fun.acccode = ?   ";
+	"and fun.acccode like ?   ";
 	
 	/**
 	 * Devuelve la relacion de   autorizaciones que tiene activas un usuario en una aplicacion/modulo/servicio a una fecha.

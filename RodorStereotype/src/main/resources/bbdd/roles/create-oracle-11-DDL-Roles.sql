@@ -67,6 +67,9 @@ Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (4,4,1);
 Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (5,5,1);
 Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (6,6,1);
 Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (7,7,2);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (7,1,2);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (7,2,2);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (7,3,2);
 
 
 
@@ -81,7 +84,7 @@ groupdesc VARCHAR2(80) NOT NULL ,
 CONSTRAINT RODOR_GROUPS_ROLES_PK PRIMARY KEY(ID)
 ) 
 LOGGING;
-COMMENT ON TABLE RODOR_GROUPS IS 'Grupos definidos en una aplicacion';
+COMMENT ON TABLE RODOR_GROUPS IS 'Grupos definidos';
 COMMENT ON COLUMN RODOR_GROUPS.id IS 'identificador unico del grupo';
 COMMENT ON COLUMN RODOR_GROUPS.groupcode IS 'Codigo del grupo';
 COMMENT ON COLUMN RODOR_GROUPS.groupdesc IS 'Descripcion del grupo';
