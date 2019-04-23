@@ -12,5 +12,8 @@
 		<ul class="nav navbar-nav">
 			<li><a href="<spring:url value="/domains/"/>">Domains</a></li>
 		</ul>
+		<ul class="nav navbar-nav">
+			<li><a href="<spring:url value="/navs/"/>">Navs</a></li>
+		</ul>
 	</div>
 </nav>

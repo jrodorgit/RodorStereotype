@@ -30,11 +30,12 @@ public class NavRestController {
 	public @ResponseBody List<NavEntry> getAppNav(@RequestParam(value = "app") String app) {
 		return service.getAppNav(app, null);
 	}
-	
+
 	// URL: navs/rest/appNavEntries?app=SICOSS&parentCode=SIC_MOD1
-		@RequestMapping("/appNavEntries")
-		public @ResponseBody List<NavEntry> getNavEntries(@RequestParam(value = "app") String app, @RequestParam(value = "parentCode") String parentCode) {
-			return service.getNavEntries(app, parentCode, null);
-		}
+	@RequestMapping("/appNavEntries")
+	public @ResponseBody List<NavEntry> getNavEntries(@RequestParam(value = "app") String app,
+			@RequestParam(value = "parentCode") String parentCode) {
+		return service.getNavEntries(app, parentCode, null);
+	}
 
 }
