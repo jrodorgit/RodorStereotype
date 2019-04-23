@@ -22,19 +22,20 @@
 	<div class="container">
 		<ul class="nav navbar-nav">
 			<c:forEach items="${modulos}" var="modulo">
-
+				<!-- Opciones de Menu  - Modulos -->
 				<c:choose>
-					<c:when test="${not empty modulo.uri}">
+					<c:when test="${empty modulo.submenus}">
 						<li> <a  href="${modulo.uri}"> ${modulo.code}</a> </li>
   					</c:when>
 					<c:otherwise>
 						<li class="dropdown"><a class="dropdown-toggle"
 							aria-expanded="false" href="#" data-toggle="dropdown"
 							data-hover="dropdown">${modulo.code}</a>
-
+							<!-- Opciones de submenu del Modulo -->
 							<ul class="dropdown-menu">
-								<li><a href="${modulo.uri}">SubMenu A</a></li>
-								<li><a href="${modulo.uri}">SubMenu B</a></li>
+								<c:forEach items="${modulo.submenus}" var="submenu">
+								<li><a href="${submenu.uri}">${submenu.code}</a></li>
+								</c:forEach>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>

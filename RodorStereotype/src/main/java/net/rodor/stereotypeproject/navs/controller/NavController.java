@@ -27,7 +27,13 @@ public class NavController {
 
 	@RequestMapping("/")
 	public String goNavs(ModelMap model) {
+		// carga de modulos
 		List<NavEntry> modulos = service.getAppNav("SICOSS", null);
+		
+		// carga de servicios asociados a cada modulo.
+		for( NavEntry modulo: modulos) {
+			modulo.setSubmenus(service.getNavEntries("SICOSS", modulo.getCode(), null));
+		}
 		model.addAttribute("modulos", modulos);
 		return "navs/app-home";
 	}

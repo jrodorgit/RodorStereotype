@@ -1,6 +1,7 @@
 package net.rodor.stereotypeproject.navs.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -46,6 +47,8 @@ public class NavEntry implements Comparable<NavEntry> {
 	@DateTimeFormat(iso = ISO.DATE)
 	public Date enddate;
 
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -110,10 +113,13 @@ public class NavEntry implements Comparable<NavEntry> {
 		this.enddate = enddate;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "NavEntry [id=" + id + ", appdomain=" + app + ", parentCode=" + parentCode + ", code=" + code
-				+ ", orden=" + orden + ", uri=" + uri + ", startdate=" + startdate + ", enddate=" + enddate + "]";
+		return "NavEntry [id=" + id + ", app=" + app + ", parentCode=" + parentCode + ", code=" + code + ", orden="
+				+ orden + ", uri=" + uri + ", startdate=" + startdate + ", enddate=" + enddate + ", submenus="
+				+ submenus + "]";
 	}
 
 	@Override
@@ -121,4 +127,15 @@ public class NavEntry implements Comparable<NavEntry> {
 		return this.orden.compareTo(arg0.orden);
 	}
 
+	public List<NavEntry> submenus;
+
+	public List<NavEntry> getSubmenus() {
+		return submenus;
+	}
+
+	public void setSubmenus(List<NavEntry> submenus) {
+		this.submenus = submenus;
+	}
+	
+	
 }
