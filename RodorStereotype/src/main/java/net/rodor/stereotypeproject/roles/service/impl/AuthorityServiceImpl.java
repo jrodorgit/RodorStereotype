@@ -1,6 +1,7 @@
 package net.rodor.stereotypeproject.roles.service.impl;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -14,15 +15,20 @@ import net.rodor.stereotypeproject.roles.service.AuthorityService;
 public class AuthorityServiceImpl implements AuthorityService {
 
 	@Autowired
-	private  AuthorityDao dao;
-	
+	private AuthorityDao dao;
+
 	@Override
 	public List<String> getUserAuths(String usercode, String acccode, Timestamp date) {
-		
-		if(date == null){
+
+		if (date == null) {
 			date = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
 		}
 		return dao.findUserAuthorities(usercode, acccode, date);
+
+		// List<String> pp = new ArrayList<String>();
+		// pp.add("permiso 1");
+		// pp.add("permiso 2");
+		// return pp;
 	}
 
 }

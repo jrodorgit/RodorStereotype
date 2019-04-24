@@ -34,13 +34,12 @@
 			$("#submitBtn").click(function() {
 				var usr = $("#usr").val();
 				var app = $("#app").val();
+				$("#authorities").empty();
 				$.ajax({
 					url : "rest/authsApp?usr=" + usr + "&app=" + app
 				}).then(function(data) {
-					alert(data);
-					jQuery.each(data, function(i, val) {
-						alert("i:" + i + " val:" + val);
 
+					jQuery.each(data, function(i, val) {
 						var ul = document.getElementById("authorities");
 						var li = document.createElement("li");
 						li.appendChild(document.createTextNode(val));

@@ -67,9 +67,9 @@ Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (4,4,1);
 Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (5,5,1);
 Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (6,6,1);
 Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (7,7,2);
-Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (7,1,2);
-Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (7,2,2);
-Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (7,3,2);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (8,1,2);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (9,2,2);
+Insert into RODOR_AUTHORITIES_ROLES (id, idauth,idrol) values (10,3,2);
 
 
 
@@ -118,8 +118,8 @@ COMMENT ON COLUMN RODOR_ROLES_GROUPS.enddate IS 'fecha de fin de validez del rol
 
 --REM INSERTING into RODOR_ROLES_Groups
 Insert into RODOR_ROLES_GROUPS (id,idgroup,idrol,startdate,enddate) values (1,1,1,to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/YYYY HH24:MI:SS,FF'),to_timestamp('31/12/2020 00:00:00,000000000','DD/MM/YYYY HH24:MI:SS,FF'));
-Insert into RODOR_ROLES_GROUPS (id,idgroup,idrol,startdate,enddate) values (1,1,2,to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/YYYY HH24:MI:SS,FF'),to_timestamp('31/12/2020 00:00:00,000000000','DD/MM/YYYY HH24:MI:SS,FF'));
-Insert into RODOR_ROLES_GROUPS (id,idgroup,idrol,startdate,enddate) values (2,2,2,to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/YYYY HH24:MI:SS,FF'),to_timestamp('31/12/2028 00:00:00,000000000','DD/MM/YYYY HH24:MI:SS,FF'));
+Insert into RODOR_ROLES_GROUPS (id,idgroup,idrol,startdate,enddate) values (2,1,2,to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/YYYY HH24:MI:SS,FF'),to_timestamp('31/12/2020 00:00:00,000000000','DD/MM/YYYY HH24:MI:SS,FF'));
+Insert into RODOR_ROLES_GROUPS (id,idgroup,idrol,startdate,enddate) values (3,2,2,to_timestamp('01/01/2017 00:00:00,000000000','DD/MM/YYYY HH24:MI:SS,FF'),to_timestamp('31/12/2028 00:00:00,000000000','DD/MM/YYYY HH24:MI:SS,FF'));
 
 
 COMMIT;
